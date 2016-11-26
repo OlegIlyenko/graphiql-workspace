@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/OlegIlyenko/graphiql-workspace.git"
   },
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "Apache License 2.0",
   "main": "index.js",
   "files": ["dist", "index.js", "graphiql-workspace.css"],
   "scripts": {
