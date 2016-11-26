@@ -11,8 +11,15 @@
     "url": "https://github.com/OlegIlyenko/graphiql-workspace.git"
   },
   "license": "Apache License 2.0",
-  "main": "index.js",
-  "files": ["dist", "index.js", "graphiql-workspace.css"],
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "graphiql-workspace.js",
+    "graphiql-workspace.min.js",
+    "graphiql-workspace.css",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "browserify-shim": {
     "react": "global:React",
     "react-dom": "global:ReactDOM"
