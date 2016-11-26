@@ -1,0 +1,265 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+
+  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.graphiql-workspace {
+  height: 100%;
+}
+
+.graphiql-tool-cont1 * {
+  box-sizing: content-box;
+}
+
+.proxyWrap {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.proxyWrapLeft, .proxyWrapRight {
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+}
+
+.proxyWrapLeft .query-editor {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-right: solid 1px #e0e0e0;
+}
+
+.proxyWrapLeft .topBarWrap {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.proxyWrapLeft .topBar {
+  -webkit-align-items: center;
+  align-items: center;
+  background: -webkit-linear-gradient(#f7f7f7, #e2e2e2);
+  background: linear-gradient(#f7f7f7, #e2e2e2);
+  border-bottom: 1px solid #d0d0d0;
+  cursor: default;
+  display: -webkit-flex;
+  display: flex;
+  height: 34px;
+  padding: 7px 14px 6px;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.proxyWrap {
+  color: #141823;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  font-family: system,
+  -apple-system,
+  'San Francisco',
+  '.SFNSDisplay-Regular',
+  'Segoe UI',
+  Segoe,
+  'Segoe WP',
+  'Helvetica Neue',
+  helvetica,
+  'Lucida Grande',
+  arial,
+  sans-serif;
+  font-size: 14px;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.proxyWrap .title {
+  font-size: 18px;
+}
+
+.proxyWrap .title em {
+  font-family: georgia;
+  font-size: 19px;
+}
+
+.proxyWrapLeft .CodeMirror {
+  color: #141823;
+  font-family: 'Consolas', 'Inconsolata', 'Droid Sans Mono', 'Monaco', monospace;
+  font-size: 13px;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#graphiql-container .editorBar {
+  margin-left: 1px;
+}
+
+#graphiql-container .queryWrap .CodeMirror-gutters {
+  cursor: col-resize;
+}
+
+.proxyWrapLeft {
+  display: flex;
+}
+
+.error {
+  padding: 15px;
+  opacity: 0.8;
+  background-color: #ff5661;
+  color: white;
+}
+
+.error pre {
+  white-space: pre-wrap;
+  color: white;
+
+  font-size: 14px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: transparent;
+  border: none;
+}
+
+.modal-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 20px;
+}
+
+.graphiql-tool-cont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.graphiql-tool-cont1 {
+  flex: 2 0px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.tabs {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs .nav-tabs {
+  background: rgba(212, 212, 212, 0.2);
+}
+
+.tabs .nav-tabs li a {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top-color: white;
+}
+
+.tabs .tab-content {
+  height: 100%;
+  display: flex;
+}
+
+.tabs .tab-content .tab-pane {
+  flex: 1;
+}
+
+.close-button {
+  margin-left: 10px;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.dropzone {
+  display: inline-block;
+}
+
+.dropzone-active {
+  background-color: #d9ffcf;
+}
+
+.tab-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headers {
+  flex: 2;
+  padding: 20px;
+
+}
+
+.headers table {
+  max-width: 800px;
+}
+
+.headers td {
+  vertical-align: middle !important;
+}
+
+.tab-form {
+  padding: 20px;
+  width: 700px;
+}
+
+.graphiql-collapsed-tab {
+  padding: 20px;
+  width: 100%;
+  flex: 2;
+  cursor: pointer;
+}
+
+/*.graphiql-collapsed-tab:hover {*/
+  /*background-color: #F4F4F4;*/
+/*}*/
+
+.tab-form .btn{
+  font-size: 14.5px;
+}
+
+.header-add {
+  font-size: 15px !important;
+}
+
+.nav-tabs li a {
+  top: -1px;
+}
+
+.graphiql-toolbar {
+  padding: 6px;
+}
+
+.toolbar {
+  overflow-x: visible !important;
+}
+
+.bs-toolbar-button {
+  font-size: 13px !important;
+}
+
+.code-pop {
+  display: inline-table !important;
+}
+
+.code-pop pre {
+  border: none;
+  background: none;
+}

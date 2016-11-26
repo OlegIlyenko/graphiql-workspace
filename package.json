@@ -13,8 +13,12 @@
   "license": "Apache License 2.0",
   "main": "index.js",
   "files": ["dist", "index.js", "graphiql-workspace.css"],
+  "browserify-shim": {
+    "react": "global:React",
+    "react-dom": "global:ReactDOM"
+  },
   "scripts": {
-    "build": "babel src --out-dir dist/",
+    "build": "./build.sh",
     "clean": "rm -rf dist/"
   },
   "dependencies": {

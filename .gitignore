@@ -8,3 +8,7 @@ dist
 
 # files
 *.iml
+
+/graphiql-workspace.js
+/graphiql-workspace.min.js
+/graphiql-workspace.css
