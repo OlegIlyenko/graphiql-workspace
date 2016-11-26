@@ -29,5 +29,5 @@ ReactDOM.render(<GraphiQLWorkspace config={config} />, document.getElementById('
 
 Here is how it looks like:
 
-[![https://raw.githubusercontent.com/OlegIlyenko/graphiql-workspace/master/screenshot.png]](http://toolbox.sangria-graphql.org/graphiql)
+[![graphiql-workspace](https://raw.githubusercontent.com/OlegIlyenko/graphiql-workspace/master/screenshot.png)](http://toolbox.sangria-graphql.org/graphiql)
 
