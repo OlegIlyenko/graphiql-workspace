@@ -27,7 +27,7 @@ const config = new AppConfig("graphiql", bootstrapOptions);
 ReactDOM.render(<GraphiQLWorkspace config={config} />, document.getElementById('graphiql-workspace'));
 ```
 
-For an example application, that uses **graphiql-workspace**, check out [graphql-toolbox](http://toolbox.sangria-graphql.org/graphiql) 
+You still will need to add bootstrap CSS in you final application. For instance, you can use `bootstrap-loader` in webpack config. For an example application, that uses **graphiql-workspace**, check out [graphql-toolbox](http://toolbox.sangria-graphql.org/graphiql) 
 
 Here is how it look like in your browser:
 
