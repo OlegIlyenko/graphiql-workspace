@@ -4,7 +4,7 @@
 
 A graphical interactive in-browser GraphQL IDE (GraphiQL), enhanced with following features:
 
-* tabbed navigation
+* Tabbed navigation
 * HTTP header editor
 * Arbitrary endpoint support
 * Workspace save/load (as JSON file)
@@ -26,6 +26,8 @@ import 'graphiql/graphiql.css'
 const config = new AppConfig("graphiql", bootstrapOptions);
 ReactDOM.render(<GraphiQLWorkspace config={config} />, document.getElementById('graphiql-workspace'));
 ```
+
+For an example application, that uses **graphiql-workspace**, check out [graphql-toolbox](http://toolbox.sangria-graphql.org/graphiql) 
 
 Here is how it looks like:
 

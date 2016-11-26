@@ -421,7 +421,7 @@ export class GraphiQLTab extends React.Component {
       params.headers = this.state.config.state.headers
     }
 
-    const url = this.state.config.state.proxy && this.props.proxyUrl ? "/proxy-graphql-request" : this.state.config.state.url
+    const url = this.state.config.state.proxy && this.props.proxyUrl ? this.props.proxyUrl : this.state.config.state.url
 
     const headers = new Headers();
 
