@@ -29,7 +29,7 @@ ReactDOM.render(<GraphiQLWorkspace config={config} />, document.getElementById('
 
 For an example application, that uses **graphiql-workspace**, check out [graphql-toolbox](http://toolbox.sangria-graphql.org/graphiql) 
 
-Here is how it looks like:
+Here is how it look like in your browser:
 
 [![graphiql-workspace](https://raw.githubusercontent.com/OlegIlyenko/graphiql-workspace/master/screenshot.png)](http://toolbox.sangria-graphql.org/graphiql)
 
