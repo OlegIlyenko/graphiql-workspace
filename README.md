@@ -1,4 +1,6 @@
-## GraphiQL Workspace [![npm version](https://badge.fury.io/js/graphiql-workspace.svg)](https://badge.fury.io/js/graphiql-workspace)
+## GraphiQL Workspace 
+
+[![npm version](https://badge.fury.io/js/graphiql-workspace.svg)](https://badge.fury.io/js/graphiql-workspace)
 
 A graphical interactive in-browser GraphQL IDE (GraphiQL), enhanced with following features:
 
@@ -27,5 +29,5 @@ ReactDOM.render(<GraphiQLWorkspace config={config} />, document.getElementById('
 
 Here is how it looks like:
 
-TODO: screenshot!
+[![https://raw.githubusercontent.com/OlegIlyenko/graphiql-workspace/master/screenshot.png]](http://toolbox.sangria-graphql.org/graphiql)
 
