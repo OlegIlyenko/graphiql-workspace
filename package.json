@@ -25,7 +25,8 @@
     "react-dom": "global:ReactDOM"
   },
   "scripts": {
-    "build": "./build.sh",
+    "build": "./scripts/build.sh",
+    "quickBuild": "./scripts/quickBuild.sh",
     "clean": "rm -rf dist/"
   },
   "dependencies": {

@@ -1,5 +1,6 @@
 # folders
 .idea
+.vscode
 target
 lib
 classes

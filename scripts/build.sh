@@ -10,9 +10,9 @@ fi
 rm -rf dist/ && mkdir -p dist/
 babel src --out-dir dist/
 echo "Bundling graphiql-workspace.js..."
-browserify -g browserify-shim -s GraphiQL dist/index.js > graphiql-workspace.js
+browserify -g browserify-shim -s graphiqlWorkspace dist/index.js > graphiql-workspace.js
 echo "Bundling graphiql-workspace.min.js..."
-browserify -g browserify-shim -g uglifyify -s GraphiQL dist/index.js 2> /dev/null | uglifyjs -c --screw-ie8 > graphiql-workspace.min.js 2> /dev/null
+browserify -g browserify-shim -g uglifyify -s graphiqlWorkspace dist/index.js 2> /dev/null | uglifyjs -c --screw-ie8 > graphiql-workspace.min.js 2> /dev/null
 echo "Bundling graphiql-workspace.css..."
 cat css/*.css > graphiql-workspace.css
 echo "Done"
