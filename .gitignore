@@ -1,5 +1,6 @@
 # folders
 .idea
+.vscode
 target
 lib
 classes
@@ -8,3 +9,7 @@ dist
 
 # files
 *.iml
+
+/graphiql-workspace.js
+/graphiql-workspace.min.js
+/graphiql-workspace.css
