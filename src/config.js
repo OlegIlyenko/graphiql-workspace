@@ -79,7 +79,8 @@ export class AppConfig {
       const {
         defaultUrl = 'http://try.sangria-graphql.org/graphql',
         defaultQuery = '{\n  hero {\n    id\n    name\n    \n    friends {\n      name\n    }\n  }\n}',
-        defaultVariables = ''
+        defaultVariables = '',
+        defaultHeaders = []
       } = options
 
       this.state = new State(key, {
@@ -91,7 +92,7 @@ export class AppConfig {
         defaultQuery,
         defaultVariables,
         defaultProxy: false,
-        defaultHeaders: [],
+        defaultHeaders,
         usedUrls: [],
         recentHeaders: [],
         maxTabHistory: 20,
