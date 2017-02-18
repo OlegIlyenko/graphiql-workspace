@@ -196,6 +196,10 @@ body, html {
   background-color: #d9ffcf;
 }
 
+.nav-tabs .active {
+  top: 1px;
+}
+
 .tab-top {
   display: flex;
   justify-content: space-between;
