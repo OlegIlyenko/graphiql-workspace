@@ -11,7 +11,3 @@ dist
 *.iml
 
 npm-debug.log
-
-/graphiql-workspace.js
-/graphiql-workspace.min.js
-/graphiql-workspace.css
