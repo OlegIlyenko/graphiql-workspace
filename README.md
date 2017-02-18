@@ -39,6 +39,43 @@ After you cloned the project, do the `npm install` and then use `./scripts/build
 
 In order to see it in action, you can use an example html page `./example/index.html`.  
 
+## Standalone Usage
+
+Here is an example HTML:
+
+```html
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>GraphiQL Workspace Example</title>
+
+    <link rel="stylesheet" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/graphiql/0.9.3/graphiql.min.css">
+    <link rel="stylesheet" media="screen" href="//unpkg.com/graphiql-workspace@1.0.1/graphiql-workspace.css">
+
+    <script src="//cdn.jsdelivr.net/react/15.4.2/react.min.js"></script>
+    <script src="//cdn.jsdelivr.net/react/15.4.2/react-dom.min.js"></script>
+    <script src="//unpkg.com/graphiql-workspace@1.0.1/graphiql-workspace.js"></script>
+  </head>
+  <body>
+    <div id="workspace" class="graphiql-workspace"></div>
+
+    <script>
+      var config = new graphiqlWorkspace.AppConfig("graphiql", {});
+
+      ReactDOM.render(
+        React.createElement(graphiqlWorkspace.GraphiQLWorkspace, {config: config}),
+        document.getElementById('workspace'));
+    </script>
+  </body>
+</html>
+```
+
 ## Community
 
 * [`graphiql-workspace-app`](https://gitlab.com/kachkaev/graphiql-workspace-app) — an instance of [`crete-react-app`](https://github.com/facebookincubator/create-react-app) that wrapps `graphiql-workspace`. Can be easily launched at `graphiql.yourcompany.com` as a lightweight Docker container (&lt;&nbsp;20MB). Hosted on GitLab.
