@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>GraphiQL Workspace Example</title>
+
+    <link rel="stylesheet" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/graphiql/0.9.3/graphiql.min.css">
+
+    <link rel="stylesheet" media="screen" href="../graphiql-workspace.css">
+
+    <script src="//cdn.jsdelivr.net/react/15.4.2/react.min.js"></script>
+    <script src="//cdn.jsdelivr.net/react/15.4.2/react-dom.min.js"></script>
+
+    <script type="text/javascript" src="../graphiql-workspace.js"></script>
+  </head>
+  <body>
+    <div id="workspace" class="graphiql-workspace"></div>
+
+    <script>
+      var config = new graphiqlWorkspace.AppConfig("graphiql", {});
+
+      ReactDOM.render(
+        React.createElement(graphiqlWorkspace.GraphiQLWorkspace, {config: config}),
+        document.getElementById('workspace'));
+    </script>
+  </body>
+</html>
