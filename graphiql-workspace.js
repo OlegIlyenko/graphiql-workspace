@@ -371,7 +371,7 @@ var GraphiQLTab = exports.GraphiQLTab = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                       _Button2.default,
-                      { bsSize: 'small', className: 'header-add', onClick: this.addHeader.bind(this) },
+                      { bsSize: 'small', className: 'header-add', onClick: this.addHeader.bind(this, null) },
                       _react2.default.createElement(_Glyphicon2.default, { glyph: 'plus' }),
                       ' Add'
                     ),

@@ -182,7 +182,7 @@ export class GraphiQLTab extends React.Component {
               <Col componentClass={ControlLabel} sm={2}>Headers</Col>
               <Col sm={10}>
                 <ButtonGroup>
-                  <Button bsSize="small" className="header-add" onClick={this.addHeader.bind(this)}><Glyphicon glyph="plus" /> Add</Button>
+                  <Button bsSize="small" className="header-add" onClick={this.addHeader.bind(this, null)}><Glyphicon glyph="plus" /> Add</Button>
                   <DropdownButton id="std-header" title="Standard">
                     <MenuItem key="oauth-bearer" onClick={this.addHeader.bind(this, {name: "Authorization", value: "Bearer "}, true)}>OAuth 2 Bearer Token</MenuItem>
                   </DropdownButton>
