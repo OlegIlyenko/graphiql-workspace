@@ -49,6 +49,10 @@ export class GraphiQLTab extends React.Component {
     }
   }
 
+  componentWillMount() {
+    this.updateSchema();
+  }
+
   runQueryAtCursor() {
     if (this.graphiql)
       this.graphiql._runQueryAtCursor()
