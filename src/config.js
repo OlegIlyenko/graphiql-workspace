@@ -87,6 +87,8 @@ export class AppConfig {
         defaultHeaders = []
       } = options
 
+      this.bootstrapOptions = options;
+
       this.state = new State(key, {
         key: key,
         lastId: 0,
@@ -118,6 +120,10 @@ export class AppConfig {
 
       this.tabInfo = tabs.map(t => new TabConfig(t))
     }
+  }
+
+  getBootstrapOptions() {
+    return this.bootstrapOptions;
   }
 
   getSavedQueries() {
