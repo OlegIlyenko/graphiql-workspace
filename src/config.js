@@ -67,6 +67,10 @@ export class State {
     else
       return undefined
   }
+
+  removeItem(key) {
+    localStorage.removeItem(this.prefix() + key)
+  }
 }
 
 function sameQuery(q1, q2) {
