@@ -55,11 +55,11 @@ Here is an example HTML:
 
     <link rel="stylesheet" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
     <link rel="stylesheet" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/graphiql/0.9.3/graphiql.min.css">
-    <link rel="stylesheet" media="screen" href="//unpkg.com/graphiql-workspace@1.0.3/graphiql-workspace.css">
+    <link rel="stylesheet" media="screen" href="//unpkg.com/graphiql-workspace@1.0.4/graphiql-workspace.css">
 
     <script src="//cdn.jsdelivr.net/react/15.4.2/react.min.js"></script>
     <script src="//cdn.jsdelivr.net/react/15.4.2/react-dom.min.js"></script>
-    <script src="//unpkg.com/graphiql-workspace@1.0.3/graphiql-workspace.js"></script>
+    <script src="//unpkg.com/graphiql-workspace@1.0.4/graphiql-workspace.js"></script>
   </head>
   <body>
     <div id="workspace" class="graphiql-workspace"></div>

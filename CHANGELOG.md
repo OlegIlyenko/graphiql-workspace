@@ -1,3 +1,7 @@
+## v1.0.4 (2017-03-02)
+
+* Updated all dependencies
+
 ## v1.0.3 (2017-03-01)
 
 * Fix: recently introduced `removeItem` now supported by tab state storage (#15)
