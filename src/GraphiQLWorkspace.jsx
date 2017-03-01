@@ -29,6 +29,8 @@ export class GraphiQLWorkspace extends React.Component {
       visited: [props.config.getActiveId()]
     }
 
+    this.bootstrapOptions = props.config.getBootstrapOptions();
+
     var orig = document.addEventListener
     document.addEventListener = function (name, fn) {
       // please don't look here... it's terrible and very very fragile
@@ -137,7 +139,7 @@ export class GraphiQLWorkspace extends React.Component {
       })
     } else if (action == "clean") {
       this.state.config.cleanup()
-      const newConfig = new AppConfig("graphiql", graphiql.bootstrapOptions)
+      const newConfig = new AppConfig("graphiql", this.bootstrapOptions)
 
       this.setState({
         config: newConfig,

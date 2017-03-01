@@ -67,6 +67,10 @@ export class State {
     else
       return undefined
   }
+
+  removeItem(key) {
+    localStorage.removeItem(this.prefix() + key)
+  }
 }
 
 function sameQuery(q1, q2) {
@@ -82,6 +86,8 @@ export class AppConfig {
         defaultVariables = '',
         defaultHeaders = []
       } = options
+
+      this.bootstrapOptions = options;
 
       this.state = new State(key, {
         key: key,
@@ -114,6 +120,10 @@ export class AppConfig {
 
       this.tabInfo = tabs.map(t => new TabConfig(t))
     }
+  }
+
+  getBootstrapOptions() {
+    return this.bootstrapOptions;
   }
 
   getSavedQueries() {
