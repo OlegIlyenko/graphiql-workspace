@@ -1,3 +1,7 @@
+## v1.0.3 (2017-03-01)
+
+* Fix: recently introduced `removeItem` now supported by tab state storage (#15)
+
 ## v1.0.2 (2017-02-28)
 
 * Fix: instrospection query is run on every keystroke in a tab (#13)
