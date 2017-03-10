@@ -16,7 +16,11 @@ babel src --out-dir dist/
 echo "Bundling graphiql-workspace.js..."
 browserify -g browserify-shim -s graphiqlWorkspace dist/index.js > graphiql-workspace.js
 
+cp node_modules/graphql-voyager/dist/voyager.worker.js voyager.worker.js
+
 echo "Bundling graphiql-workspace.css..."
 cat css/*.css > graphiql-workspace.css
+cat node_modules/graphql-voyager/dist/voyager.css >> graphiql-workspace.css
+
 
 echo "Done"

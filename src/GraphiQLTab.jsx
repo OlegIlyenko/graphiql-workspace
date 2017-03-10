@@ -4,6 +4,7 @@ import {GraphiQL} from 'graphiql/dist/components/GraphiQL';
 import {GraphiQLToolbar} from './GraphiQLToolbar';
 import {HeaderEditor} from './HeaderEditor';
 import {QuerySelectionButton} from './QuerySelectionButton';
+import {Voyager} from 'graphql-voyager';
 
 import Form from 'react-bootstrap/lib/Form';
 import FormGroup from 'react-bootstrap/lib/FormGroup';
@@ -247,7 +248,14 @@ export class GraphiQLTab extends React.Component {
           {addButton}
         </GraphiQL.Toolbar>
       </GraphiQL>
+      <div className="foo">
+        <Voyager introspection={this.introspectionProvider.bind(this)} />
+      </div>
     </div>
+  }
+
+  introspectionProvider(query) {
+    return this.fetcher({query: query})
   }
 
   saveQuery() {
