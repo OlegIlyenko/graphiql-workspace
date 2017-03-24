@@ -249,12 +249,12 @@ export class GraphiQLTab extends React.Component {
         </GraphiQL.Toolbar>
       </GraphiQL>
       <div className="foo">
-        <Voyager introspection={this.introspectionProvider.bind(this)} />
+        <Voyager introspection={this.introspectionProvider} />
       </div>
     </div>
   }
 
-  introspectionProvider(query) {
+  introspectionProvider = (query) => {
     return this.fetcher({query: query})
   }
 
