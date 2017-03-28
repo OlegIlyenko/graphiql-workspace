@@ -30,19 +30,19 @@
     "clean": "rm -rf dist/"
   },
   "dependencies": {
-    "lodash": "^4.17.4",
     "bootstrap-sass": "^3.3.7",
     "brace": "^0.10.0",
     "classnames": "2.2.5",
     "graphiql": "^0.9.3",
-    "moment": "^2.17.1",
     "graphql": "^0.6.0 || ^0.7.0 || ^0.8.0-b || ^0.9.0",
+    "graphql-voyager": "^1.0.0-rc.2",
+    "lodash": "^4.17.4",
+    "moment": "^2.17.1",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2",
     "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.2",
     "react-dropzone": "^3.11.0",
-    "urijs": "^1.18.8",
-    "graphql-voyager": "1.0.0-rc.1"
+    "urijs": "^1.18.8"
   },
   "devDependencies": {
     "babel-cli": "6.18.0",
