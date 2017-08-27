@@ -82,6 +82,7 @@ export class AppConfig {
     if (typeof key === "string") {
       const {
         defaultUrl = 'http://try.sangria-graphql.org/graphql',
+        defaultWebsocketUrl = '',
         defaultQuery = '{\n  hero {\n    id\n    name\n    \n    friends {\n      name\n    }\n  }\n}',
         defaultVariables = '',
         defaultHeaders = []
@@ -95,6 +96,7 @@ export class AppConfig {
         tabIds: [],
         closedTabs: [],
         defaultUrl,
+        defaultWebsocketUrl,
         defaultQuery,
         defaultVariables,
         defaultProxy: false,
@@ -190,6 +192,7 @@ export class AppConfig {
     const {
       tabIds,
       defaultUrl,
+      defaultWebsocketUrl,
       defaultProxy,
       defaultHeaders,
       maxHistory,
@@ -200,6 +203,7 @@ export class AppConfig {
     const tab = new TabConfig(key, {
       name: "Query " + (tabIds.length + 1),
       url: defaultUrl,
+      websocketUrl: defaultWebsocketUrl,
       proxy: defaultProxy,
       headers: defaultHeaders,
       maxHistory: maxHistory || 20,
@@ -300,6 +304,7 @@ export class TabConfig {
       const {
         name,
         url,
+        websocketUrl,
         proxy,
         headers,
         maxHistory,
@@ -311,6 +316,7 @@ export class TabConfig {
         id: key,
         name,
         url,
+        websocketUrl,
         proxy,
         headers,
         collapsed: false,
