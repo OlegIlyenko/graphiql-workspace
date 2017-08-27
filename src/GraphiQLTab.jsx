@@ -117,7 +117,7 @@ export class GraphiQLTab extends React.Component {
 
       urlInput = <InputGroup>
         {url}
-        <DropdownButton componentClass={InputGroup.Button} id="used-url" title="Recent">
+        <DropdownButton componentClass={InputGroup.Button} bsSize="small" id="used-url" title="Recent">
           {items}
         </DropdownButton>
       </InputGroup>

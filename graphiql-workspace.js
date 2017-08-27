@@ -312,7 +312,7 @@ var GraphiQLTab = exports.GraphiQLTab = function (_React$Component) {
           url,
           _react2.default.createElement(
             _DropdownButton2.default,
-            { componentClass: _InputGroup2.default.Button, id: 'used-url', title: 'Recent' },
+            { componentClass: _InputGroup2.default.Button, bsSize: 'small', id: 'used-url', title: 'Recent' },
             items
           )
         );

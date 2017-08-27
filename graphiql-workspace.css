@@ -239,6 +239,10 @@ body, html {
   font-size: 14.5px;
 }
 
+.tab-form .btn.btn-sm{
+  font-size: 12.5px;
+}
+
 .header-add {
   font-size: 15px !important;
 }
