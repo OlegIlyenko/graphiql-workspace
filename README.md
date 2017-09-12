@@ -57,8 +57,8 @@ Here is an example HTML:
     <link rel="stylesheet" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/graphiql/0.9.3/graphiql.min.css">
     <link rel="stylesheet" media="screen" href="//cdn.jsdelivr.net/npm/graphiql-workspace@1.0.4/graphiql-workspace.min.css">
 
-    <script src="//cdn.jsdelivr.net/react/15.4.2/react.min.js"></script>
-    <script src="//cdn.jsdelivr.net/react/15.4.2/react-dom.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/react@15.4.2/react.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/react-dom@15.4.2/dist/react-dom.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/graphiql-workspace@1.0.4/graphiql-workspace.min.js"></script>
   </head>
   <body>
