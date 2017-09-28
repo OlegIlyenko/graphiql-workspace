@@ -4,6 +4,7 @@ import {GraphiQL} from 'graphiql/dist/components/GraphiQL';
 import {GraphiQLToolbar} from './GraphiQLToolbar';
 import {HeaderEditor} from './HeaderEditor';
 import {QuerySelectionButton} from './QuerySelectionButton';
+import {DebouncedFormControl} from './DebouncedFormControl';
 
 import Form from 'react-bootstrap/lib/Form';
 import FormGroup from 'react-bootstrap/lib/FormGroup';
@@ -23,6 +24,9 @@ import {introspectionQuery} from './utility/introspectionQueries';
 
 import {buildClientSchema} from 'graphql';
 
+import {graphQLFetcher} from 'graphiql-subscriptions-fetcher';
+import {SubscriptionClient} from 'subscriptions-transport-ws';
+
 import _ from 'lodash'
 
 export class GraphiQLTab extends React.Component {
@@ -39,6 +43,7 @@ export class GraphiQLTab extends React.Component {
     super()
 
     this.graphiql = null
+    this.subscriptionsClient = null
 
     this.state = {
       config: props.tab,
@@ -83,7 +88,8 @@ export class GraphiQLTab extends React.Component {
     return <div className="graphiql-tool-cont">
       <div className="tab-top" style={{flexDirection: "row"}}>
         <div className="graphiql-collapsed-tab" onClick={this.expand.bind(this)}>
-          <strong>URL:</strong> {tab.state.url}{tab.state.proxy ? " (proxied)" : ""} {headers}
+          <strong>URL:</strong> {tab.state.url}{tab.state.proxy ? " (proxied)" : ""} {headers}<br/>
+          <strong>WS:</strong> {tab.state.websocketUrl}
         </div>
         <div>
           <GraphiQLToolbar hirizontal={true} onToolbar={this.toolbar.bind(this)} hasClosed={this.props.hasClosed} />
@@ -97,7 +103,7 @@ export class GraphiQLTab extends React.Component {
   renderExpanded() {
     const tab = this.state.config
 
-    const url = <FormControl
+    const url = <DebouncedFormControl
       placeholder="GraphQL endpoint URL"
       bsSize="small"
       value={tab.state.url}
@@ -111,11 +117,17 @@ export class GraphiQLTab extends React.Component {
 
       urlInput = <InputGroup>
         {url}
-        <DropdownButton componentClass={InputGroup.Button} id="used-url" title="Recent">
+        <DropdownButton componentClass={InputGroup.Button} bsSize="small" id="used-url" title="Recent">
           {items}
         </DropdownButton>
       </InputGroup>
     }
+
+    const websocketInput = <DebouncedFormControl
+      placeholder="GraphQL WS URL"
+      bsSize="small"
+      value={tab.state.websocketUrl}
+      onChange={this.websocketUrlChange.bind(this)} />
 
     let recentHeaders = ''
 
@@ -181,6 +193,13 @@ export class GraphiQLTab extends React.Component {
                 </Col>
               </FormGroup>
             }
+
+            <FormGroup controlId="ws-input" validationState={this.state.wsError ? "error" : null}>
+              <Col componentClass={ControlLabel} sm={2}>WS URL</Col>
+              <Col sm={10}>
+                {websocketInput}
+              </Col>
+            </FormGroup>
 
             <FormGroup controlId="headers-input">
               <Col componentClass={ControlLabel} sm={2}>Headers</Col>
@@ -331,6 +350,7 @@ export class GraphiQLTab extends React.Component {
     this.state.config.state.setState({headers: this.state.config.state.headers})
 
     this.setState({config: this.state.config, appConfig: this.state.appConfig})
+    this.closeCurrentSubscriptionsClient()
   }
 
   headerFinish(h, idx) {
@@ -351,6 +371,7 @@ export class GraphiQLTab extends React.Component {
     }
 
     this.setState({header: null, headerIdx: null})
+    this.closeCurrentSubscriptionsClient()
   }
 
   nameChange(e) {
@@ -373,15 +394,51 @@ export class GraphiQLTab extends React.Component {
     this.updateSchema()
   }
 
+  validateUrl(url) {
+    const re_url = new RegExp(
+      "^" +
+        // protocol identifier
+        "(?:(?:https?|wss?)://)" +
+        // user:pass authentication
+        "(?:\\S+(?::\\S*)?@)?" +
+        "(?:" +
+          // IP address dotted notation octets
+          // excludes loopback network 0.0.0.0
+          // excludes reserved space >= 224.0.0.0
+          // excludes network & broacast addresses
+          // (first & last IP address of each class)
+          "(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])" +
+          "(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}" +
+          "(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))" +
+        "|" +
+          // localhost
+          "(?:localhost)" +
+        "|" +
+          // host name
+          "(?:(?:[a-z\\u00a1-\\uffff0-9]-*)*[a-z\\u00a1-\\uffff0-9]+)" +
+          // domain name
+          "(?:\\.(?:[a-z\\u00a1-\\uffff0-9]-*)*[a-z\\u00a1-\\uffff0-9]+)*" +
+          // TLD identifier
+          "(?:\\.(?:[a-z\\u00a1-\\uffff]{2,}))" +
+          // TLD may end with dot
+          "\\.?" +
+        ")" +
+        // port number
+        "(?::\\d{2,5})?" +
+        // resource path
+        "(?:[/?#]\\S*)?" +
+      "$", "i"
+    );
+
+    return re_url.test(url);
+  }
+
   setUrl(url) {
     this.state.config.state.setState({
       url: url
     })
 
-    const expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
-    const regex = new RegExp(expression);
-
-    if (url.match(regex)) {
+    if (this.validateUrl(url)) {
       this.setState({config: this.state.config, schemaError: false})
       this.updateSchema()
     } else {
@@ -391,6 +448,24 @@ export class GraphiQLTab extends React.Component {
 
   urlChange(e) {
     this.setUrl(e.target.value)
+  }
+
+  setWebsocketUrl(url) {
+    this.state.config.state.setState({
+      websocketUrl: url
+    })
+
+    this.closeCurrentSubscriptionsClient();
+
+    if (url === '' || this.validateUrl(url)) {
+      this.setState({config: this.state.config, wsError: false})
+    } else {
+      this.setState({config: this.state.config, wsError: true})
+    }
+  }
+
+  websocketUrlChange(e) {
+    this.setWebsocketUrl(e.target.value)
   }
 
   updateSchema() {
@@ -420,6 +495,22 @@ export class GraphiQLTab extends React.Component {
   }
 
   fetcher(params) {
+    const wsUrl = this.state.config.state.websocketUrl
+    if ( wsUrl && this.validateUrl(wsUrl)) {
+      if(this.subscriptionsClient === null) {
+        const subscriptionsClientBuilder = this.state.appConfig.bootstrapOptions.subscriptionsClientBuilder || this.defaultSubscriptionsClientBuilder
+        const connectionParams = {}
+        this.state.config.state.headers.forEach(h => connectionParams[h.name] = h.value)
+        this.subscriptionsClient = subscriptionsClientBuilder(wsUrl, connectionParams);
+      }
+      
+      return graphQLFetcher(this.subscriptionsClient, this.fallbackFetcher.bind(this))(params)
+    } else {
+      return this.fallbackFetcher(params);
+    }
+  }
+
+  fallbackFetcher(params) {
     if (this.state.config.state.proxy) {
       params.url = this.state.config.state.url
       params.headers = this.state.config.state.headers
@@ -459,5 +550,19 @@ export class GraphiQLTab extends React.Component {
         return responseBody;
       }
     });
+  }
+
+  defaultSubscriptionsClientBuilder(url, connectionParams) {
+    return new SubscriptionClient(url, {
+      reconnect: true,
+      connectionParams
+    })
+  }
+
+  closeCurrentSubscriptionsClient() {
+    if(this.subscriptionsClient) {
+      this.subscriptionsClient.close(true, true)
+      this.subscriptionsClient = null
+    }
   }
 }
