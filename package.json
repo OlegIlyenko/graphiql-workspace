@@ -1,6 +1,6 @@
 {
   "name": "graphiql-workspace",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A graphical interactive in-browser GraphQL IDE enhanced with tabbed navigation, HTTP headers, arbitrary endpoints, etc.",
   "homepage": "http://toolbox.sangria-graphql.org/graphiql",
   "bugs": {

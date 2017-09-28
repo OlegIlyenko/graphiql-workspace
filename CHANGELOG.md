@@ -1,3 +1,7 @@
+## v1.0.5 (2017-09-28)
+
+* Add support for subscriptions (#22). Huge thanks to @tlvenn for this contribution!
+
 ## v1.0.4 (2017-03-02)
 
 * Updated all dependencies
