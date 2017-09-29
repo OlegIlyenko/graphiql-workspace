@@ -159,7 +159,7 @@ var _introspectionQueries = require('./utility/introspectionQueries');
 
 var _graphql = require('graphql');
 
-var _graphiqlSubscriptionsFetcher = require('graphiql-subscriptions-fetcher');
+var _fetcher = require('graphiql-subscriptions-fetcher/dist/fetcher');
 
 var _subscriptionsTransportWs = require('subscriptions-transport-ws');
 
@@ -828,7 +828,7 @@ var GraphiQLTab = exports.GraphiQLTab = function (_React$Component) {
           this.subscriptionsClient = subscriptionsClientBuilder(wsUrl, connectionParams);
         }
 
-        return (0, _graphiqlSubscriptionsFetcher.graphQLFetcher)(this.subscriptionsClient, this.fallbackFetcher.bind(this))(params);
+        return (0, _fetcher.graphQLFetcher)(this.subscriptionsClient, this.fallbackFetcher.bind(this))(params);
       } else {
         return this.fallbackFetcher(params);
       }
@@ -907,7 +907,7 @@ GraphiQLTab.propTypes = {
   proxyUrl: _react.PropTypes.string
 };
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./DebouncedFormControl":1,"./GraphiQLToolbar":3,"./HeaderEditor":5,"./QuerySelectionButton":7,"./utility/introspectionQueries":10,"graphiql-subscriptions-fetcher":177,"graphiql/dist/components/GraphiQL":188,"graphql":398,"lodash":473,"react-bootstrap/lib/Button":482,"react-bootstrap/lib/ButtonGroup":483,"react-bootstrap/lib/Checkbox":484,"react-bootstrap/lib/Col":485,"react-bootstrap/lib/ControlLabel":486,"react-bootstrap/lib/DropdownButton":488,"react-bootstrap/lib/Form":492,"react-bootstrap/lib/FormControl":493,"react-bootstrap/lib/FormGroup":496,"react-bootstrap/lib/Glyphicon":497,"react-bootstrap/lib/InputGroup":498,"react-bootstrap/lib/MenuItem":501,"react-bootstrap/lib/Table":518,"subscriptions-transport-ws":547}],3:[function(require,module,exports){
+},{"./DebouncedFormControl":1,"./GraphiQLToolbar":3,"./HeaderEditor":5,"./QuerySelectionButton":7,"./utility/introspectionQueries":10,"graphiql-subscriptions-fetcher/dist/fetcher":177,"graphiql/dist/components/GraphiQL":188,"graphql":398,"lodash":473,"react-bootstrap/lib/Button":482,"react-bootstrap/lib/ButtonGroup":483,"react-bootstrap/lib/Checkbox":484,"react-bootstrap/lib/Col":485,"react-bootstrap/lib/ControlLabel":486,"react-bootstrap/lib/DropdownButton":488,"react-bootstrap/lib/Form":492,"react-bootstrap/lib/FormControl":493,"react-bootstrap/lib/FormGroup":496,"react-bootstrap/lib/Glyphicon":497,"react-bootstrap/lib/InputGroup":498,"react-bootstrap/lib/MenuItem":501,"react-bootstrap/lib/Table":518,"subscriptions-transport-ws":547}],3:[function(require,module,exports){
 (function (global){
 'use strict';
 
