@@ -24,9 +24,6 @@
     "react": "global:React",
     "react-dom": "global:ReactDOM"
   },
-  "browser": {
-    "graphiql-subscriptions-fetcher": "./node_modules/graphiql-subscriptions-fetcher/dist/fetcher.js"
-  },
   "scripts": {
     "build": "./scripts/build.sh",
     "quickBuild": "./scripts/quickBuild.sh",
