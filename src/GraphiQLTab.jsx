@@ -24,7 +24,7 @@ import {introspectionQuery} from './utility/introspectionQueries';
 
 import {buildClientSchema} from 'graphql';
 
-import {graphQLFetcher} from 'graphiql-subscriptions-fetcher/dist/fetcher';
+import {graphQLFetcher} from './GraphiQLSubscriptionsFetcher';
 import {SubscriptionClient} from 'subscriptions-transport-ws';
 
 import _ from 'lodash'
