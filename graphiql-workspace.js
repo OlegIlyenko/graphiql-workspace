@@ -86,8 +86,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.graphQLFetcher = undefined;
 
-var _subscriptionsTransportWs = require('subscriptions-transport-ws');
-
 var _graphql = require('graphql');
 
 var hasSubscriptionOperation = function hasSubscriptionOperation(graphQlParams) {
@@ -156,7 +154,7 @@ var graphQLFetcher = exports.graphQLFetcher = function graphQLFetcher(subscripti
     }
   };
 };
-},{"graphql":404,"subscriptions-transport-ws":553}],3:[function(require,module,exports){
+},{"graphql":404}],3:[function(require,module,exports){
 (function (global){
 'use strict';
 
