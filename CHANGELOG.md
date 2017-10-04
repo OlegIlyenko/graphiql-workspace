@@ -1,3 +1,9 @@
+## v1.1.0 (2017-10-05)
+
+* Removed `graphiql-subscriptions-fetcher` dependency
+* `graphql-js` is now a peer dependency
+* Updated other dependencies
+
 ## v1.1.0 (2017-09-29)
 
 * Fix 'graphiql-subscriptions-fetcher' import (#25). Kudos to @kachkaev for this contribution!
