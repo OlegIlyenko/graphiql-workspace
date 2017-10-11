@@ -1,4 +1,8 @@
-## v1.1.0 (2017-10-05)
+## v1.1.2 (2017-10-05)
+
+* Fix CORS error thrown by browsers (#27). Thanks to @kachkaev for this contribution!
+
+## v1.1.1 (2017-10-05)
 
 * Removed `graphiql-subscriptions-fetcher` dependency
 * `graphql-js` is now a peer dependency
