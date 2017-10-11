@@ -532,7 +532,7 @@ export class GraphiQLTab extends React.Component {
       method: 'post',
       headers: headers,
       body: JSON.stringify(params),
-      credentials: 'include',
+      credentials: 'same-origin',
     }).then(response => response.text())
     .then(responseBody => {
       try {
