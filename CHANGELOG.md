@@ -1,3 +1,7 @@
+## v1.1.3 (2017-10-30)
+
+* Fix graphql dependency issue (#28). Thanks to @tlvenn for this contribution!
+
 ## v1.1.2 (2017-10-05)
 
 * Fix CORS error thrown by browsers (#27). Thanks to @kachkaev for this contribution!
