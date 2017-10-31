@@ -54,12 +54,12 @@ Here is an example HTML:
     <title>GraphiQL Workspace Example</title>
 
     <link rel="stylesheet" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
-    <link rel="stylesheet" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/graphiql/0.9.3/graphiql.min.css">
-    <link rel="stylesheet" media="screen" href="//cdn.jsdelivr.net/npm/graphiql-workspace@1.1.0/graphiql-workspace.min.css">
+    <link rel="stylesheet" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/graphiql/0.11.6/graphiql.min.css">
+    <link rel="stylesheet" media="screen" href="//cdn.jsdelivr.net/npm/graphiql-workspace@1.1.3/graphiql-workspace.min.css">
 
     <script src="//cdn.jsdelivr.net/npm/react@15.4.2/react.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/react-dom@15.4.2/dist/react-dom.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/graphiql-workspace@1.1.0/graphiql-workspace.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/graphiql-workspace@1.1.3/graphiql-workspace.min.js"></script>
   </head>
   <body>
     <div id="workspace" class="graphiql-workspace"></div>
@@ -77,4 +77,4 @@ Here is an example HTML:
 
 ## Community
 
-* [`graphiql-workspace-app`](https://gitlab.com/kachkaev/graphiql-workspace-app) — an instance of [`crete-react-app`](https://github.com/facebookincubator/create-react-app) that wrapps `graphiql-workspace`. Can be easily launched at `graphiql.yourcompany.com` as a lightweight Docker container (&lt;&nbsp;20MB). Hosted on GitLab.
+* [`graphiql-workspace-app`](https://gitlab.com/kachkaev/graphiql-workspace-app) — an instance of [`create-react-app`](https://github.com/facebookincubator/create-react-app) that wrapps `graphiql-workspace`. Can be easily launched at `graphiql.yourcompany.com` as a lightweight Docker container (&lt;&nbsp;20MB). Hosted on GitLab.
