@@ -134,7 +134,7 @@ var graphQLFetcher = exports.graphQLFetcher = function graphQLFetcher(subscripti
 
     if (subscriptionsClient && hasSubscriptionOperation(graphQLParams)) {
       return {
-        subscribe: function subscribe() {
+        subscribe: function subscribe(observer) {
           observer.next('Your subscription data will appear here after server publication!');
 
           activeSubscriptionId = subscriptionsClient.subscribe({
