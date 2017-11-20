@@ -25,7 +25,7 @@ export const graphQLFetcher = (subscriptionsClient, fallbackFetcher) => {
 
     if (subscriptionsClient && hasSubscriptionOperation(graphQLParams)) {
       return {
-        subscribe() {
+        subscribe(observer) {
           observer.next('Your subscription data will appear here after server publication!');
 
           activeSubscriptionId = subscriptionsClient.subscribe({
