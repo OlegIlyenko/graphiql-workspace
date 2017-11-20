@@ -77,4 +77,4 @@ Here is an example HTML:
 
 ## Community
 
-* [`graphiql-workspace-app`](https://gitlab.com/kachkaev/graphiql-workspace-app) — an instance of [`create-react-app`](https://github.com/facebookincubator/create-react-app) that wrapps `graphiql-workspace`. Can be easily launched at `graphiql.yourcompany.com` as a lightweight Docker container (&lt;&nbsp;20MB). Hosted on GitLab.
+* [`graphiql-workspace-app`](https://gitlab.com/kachkaev/graphiql-workspace-app) — an instance of [`create-react-app`](https://github.com/facebookincubator/create-react-app) that wraps `graphiql-workspace`. Can be easily launched at `graphiql.yourcompany.com` as a lightweight Docker container (&lt;&nbsp;20MB). Hosted on GitLab.
