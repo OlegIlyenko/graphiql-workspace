@@ -1,3 +1,7 @@
+## v1.1.4 (2017-11-20)
+
+* Update subscription-transport-ws version (#30, #31). Thanks to @tlvenn for investigating and fixing this issue!
+
 ## v1.1.3 (2017-10-30)
 
 * Fix graphql dependency issue (#28). Thanks to @tlvenn for this contribution!
