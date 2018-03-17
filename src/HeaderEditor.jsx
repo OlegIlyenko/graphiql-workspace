@@ -50,7 +50,7 @@ export class HeaderEditor extends React.Component {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={this.ok.bind(this)} bsStyle="primary">Ok</Button>
+        <Button onClick={this.ok.bind(this)} bsStyle="primary">OK</Button>
         <Button onClick={this.hide.bind(this)}>Close</Button>
       </Modal.Footer>
     </Modal>
