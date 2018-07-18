@@ -503,7 +503,7 @@ export class GraphiQLTab extends React.Component {
         this.state.config.state.headers.forEach(h => connectionParams[h.name] = h.value)
         this.subscriptionsClient = subscriptionsClientBuilder(wsUrl, connectionParams);
       }
-      
+
       return graphQLFetcher(this.subscriptionsClient, this.fallbackFetcher.bind(this))(params)
     } else {
       return this.fallbackFetcher(params);
@@ -532,7 +532,7 @@ export class GraphiQLTab extends React.Component {
       method: 'post',
       headers: headers,
       body: JSON.stringify(params),
-      credentials: 'same-origin',
+      credentials: this.state.appConfig.bootstrapOptions.credentials || 'same-origin'
     }).then(response => response.text())
     .then(responseBody => {
       try {
