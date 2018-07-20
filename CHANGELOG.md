@@ -1,3 +1,7 @@
+## v1.1.5 (2018-07-20)
+
+* Support passing credentials option to `appConfig.bootstrapOptions` (#39). Thanks to @jcbpl for this contribution!
+
 ## v1.1.4 (2017-11-20)
 
 * Update subscription-transport-ws version (#30, #31). Thanks to @tlvenn for investigating and fixing this issue!
