@@ -1,4 +1,4 @@
-# GraphiQL Workspace 
+# GraphiQL Workspace
 
 [![npm version](https://badge.fury.io/js/graphiql-workspace.svg)](https://badge.fury.io/js/graphiql-workspace)
 
@@ -27,7 +27,7 @@ const config = new AppConfig("graphiql", bootstrapOptions);
 ReactDOM.render(<GraphiQLWorkspace config={config} />, document.getElementById('graphiql-workspace'));
 ```
 
-You still will need to add bootstrap CSS in you final application. For instance, you can use `bootstrap-loader` in webpack config. For an example application, that uses **graphiql-workspace**, check out [graphql-toolbox](http://toolbox.sangria-graphql.org/graphiql) 
+You still will need to add bootstrap CSS in you final application. For instance, you can use `bootstrap-loader` in webpack config. For an example application, that uses **graphiql-workspace**, check out [graphql-toolbox](http://toolbox.sangria-graphql.org/graphiql)
 
 Here is how it look like in your browser:
 
@@ -37,7 +37,7 @@ Here is how it look like in your browser:
 
 After you cloned the project, do the `npm install` and then use `./scripts/build.sh` or `./scripts/quickBuild.sh` to build the project.
 
-In order to see it in action, you can use an example html page `./example/index.html`.  
+In order to see it in action, you can use an example html page `./example/index.html`.
 
 ## Standalone Usage
 
@@ -53,11 +53,11 @@ Here is an example HTML:
 
     <title>GraphiQL Workspace Example</title>
 
-    <link rel="stylesheet" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/graphiql/0.11.6/graphiql.min.css">
     <link rel="stylesheet" media="screen" href="//cdn.jsdelivr.net/npm/graphiql-workspace@1.1.3/graphiql-workspace.min.css">
 
-    <script src="//cdn.jsdelivr.net/npm/react@15.4.2/react.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/react@15.4.2/dist/react.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/react-dom@15.4.2/dist/react-dom.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/graphiql-workspace@1.1.3/graphiql-workspace.min.js"></script>
   </head>
